@@ -1,0 +1,216 @@
+https://www.youtube.com/watch?v=tsGWJMRP6Bg&list=PL-cIzvS-5d-3ym4Jv54Wwluv_gIJRHaQw&index=43
+[FE] 리액트 - 47강
+
+id : farmerkyh@naver.com / richColors
+
+
+1. 프로젝트 생성
+   참고 url : https://ui.shadcn.com/docs/installation/vite
+   설치 : npm create vite@latest
+         npm install tailwindcss @tailwindcss/vite
+		 npm install -D @types/node
+		 
+		 npx shadcn@latest init
+    
+2. shadcn ui 관련 모듈 설치
+   Skeleton 컴포넌트 : npx shadcn@latest add skeleton
+
+3. reactrouter
+   https://reactrouter.com/start/declarative/installation
+   npm i react-router
+   npx shadcn@latest add label
+   npx shadcn@latest add input
+   npx shadcn@latest add select
+   npx shadcn@latest add form  
+   npx shadcn@latest add checkbox
+   
+   npm install @supabase/supabase-js
+
+   npm install nanoid
+
+3. https://zustand.docs.pmnd.rs/getting-started/introduction
+4. https://www.blocknotejs.org/   
+   
+5. Supabase
+   0. https://supabase.com
+   1. github와 연동 후 login
+   2. farmerkyh69@gmail.com
+   3. project 생성
+	  username : farmerkyh  
+	  Organization : farmerkyh69's Org
+	  Project name      : signal,  react-9diin
+	  Database password : signal!010
+   4. react에 supabase연동 설정
+      Project 선택 
+      상단 [connect]
+	  [App Frameworks] tab선택
+	  FrameWork->[React],   Using ->[Vite]
+	    .env, utils/subpase.ts, App.tsx 파일 내용을  react 프로젝트 설정
+   5. table 생성
+      우.상 : [Dashboard]
+	  farmerkyh69's Org
+	  프로젝트선택 : react-9diin
+	  왼쪽메뉴 :Table Editor
+	  왼쪽 [+New Table]
+	     -> * id는 email id를 가져오기
+		 -> id 옆 [링크] icon 클릭
+		 -> Select a schema [auth]
+		 -> Select a table to reference to [Users]
+		 -> public.user [id]  => auth.users [id]
+		 -> Action if referenced row is updated [Cascade]
+		 -> Action if referenced row is removed [Cascade]
+	     -> 컬럼 추가
+		 -> [Save]
+	  왼쪽에서 생성테이블 선택
+	     -> (+)Add RLS policy
+		 -> [Create policy]
+		 -> Policy Name [React Supabase Project]  '아무거나 넣어도 됨'
+		 -> [(o)ALL]
+		 -> [Use options above to edit] script영역 7, 9 라인 두곳에 아래내용 추가
+		    auth.uid() = id
+	     -> [Save Policy]
+	   Table.crud 사용방법 문서보기
+	     -> 생성한 테이블 왼쪽에서 선택
+		 -> table grid 오른쪽 상단 -> [API Docs] icon 클릭
+		 -> 
+   6. file upload영 table 생성
+      https://supabase.com
+	  [Dashboard]
+	  [farmerkyh69's Org]
+	  [react-9diin]
+	  왼쪽 메뉴 -> [Storage]
+	  [+New bucket]
+	      Bucket name : [files]
+		  (활성화) Public bucket  (권한없는 사용자이용)
+		  [Create]
+      오른쪽상단 -> Create folder
+	      (폴더 이름 부여)
+	  왼쪽하단 -> Policies
+	      FILES -> [New policy]
+		        -> For full customization
+				-> Policy name [File Upload]
+				   Allowed operateion [v]SELECT [v]INSERT [v]UPDATE [v]DELETE`
+			  -> [Preview] -> [Save Policy]
+	      
+2. Supabase를 활용한 소셜 로그인(구글 로그인)구현하기
+	1. 구글 클라우드 콘솔 접속 : https://console.cloud.google.com/
+	2. 새프로젝트 만들기
+		1. 프로젝트명 : Supabase-OAuth
+		2. 조직 : 조직없음
+		3. [만들기]
+	3. 생성한 프로젝트 선택
+	   프로젝트 선택 후
+	   [대시보드] 글자 클릭 하면 프로젝트 상세 관리 페이지로 이동됨
+	4. 왼쪽메뉴 : API및 서비스 -> OAuth동의 화면
+	   * [시작하기]
+	   		1. 앱정보 : Supabase-OAuth
+	    		  이메일 : farmerky69h@gmail.com
+	   		2. 대상 : (o) 외부 - 구글 모든 사용자가 사용가능
+	   		3. 이메일 : farmerky69h@gmail.com
+	   		4. 완료 : [v] 약관동의
+	   		[만들기]
+       * 왼쪽메뉴 : [클라이언트]
+	   		1. [+] 클라이언트 만들기
+			2. 애플리케이션 유형 : 웹 애플리케이션
+			3. 이름 : Supabase-OAuth
+			4. 승인된 JavaScript 원본 -> [+ URI추가]
+			   http://localhost:5173
+			5. 승인된 리디렉션 URI -> [+ URI추가]
+				https://cwtfilntkjkkbuedkyhd.supabase.co/auth/v1/callback
+			6. [만들기]
+
+			** 승인된 리디렉션 URI 찾아오기
+			   1. supabase에 접속 :  https://supabase.com
+			   2. 연관되어 있는 : [Dashboard] 
+			                    -> [farmerkyh69's Org] 
+								-> [react-9diin] 
+								-> 왼쪽 icon 메뉴 : Authentication
+								-> 왼쪽 메뉴 : Sign In / Providers
+								-> 아래로 scroll -> google
+								-> (o)Enable Sign in with Google
+								   Callback URL (for OAuth)  <--이 값을 Copy하고
+				3. 구글콘솔에 가서 url에 붙여넣기
+				4. [만들기]
+				5. 그러면 생성 후 팝업창이뜸
+				   이때 '클라이언트 ID'가 생성됨
+				   이 값을 COPY
+				6. Supabase로 다시 가서
+				   [Client IDs] - 에 붙여 넣고
+				7. 다시 구글콘솔에 가서.. 왼쪽 [클라이언트] 클릭
+				   > 방금생성한 [Supabase-OAuth] 클릭
+				   > 오른쪽 하단에 '클라이언트 보안 비밀번호' Copy
+				8. Supabase로 다시 가서
+				   > 'Client Secret (for OAuth)'에 붙여넣고
+				   > [Save]
+
+3. 배포
+   1. Git에 commit전 설정
+      > .gitignore 에  환경변수 관련 파일들은 업로드 제외처리
+	  > .evn*
+   2. Github에 commmit전 준비작업
+	  1. Git 설치 확인
+	  	 > cmd : git --version
+		   -> git version 2.x.x` 이런 식으로 나오면 OK.
+		   -> 안나오면 'https://git-scm.com/downloads' 여기 가서 download후 설치
+		   -> Git-2.51.1-64-bit.exe : 실행
+		   -> [Next] -> [Next] -> [Next] -> [Next]
+		   -> 'Choosing the default editor used by Git' -> Use Vim (the default) 또는 Use Visual Studio Code as Git’s default editor 선택
+		   -> [Next] 
+		   -> 'Adjusting your PATH environment'  -> “Git from the command line and also from 3rd-party software” 선택
+		   -> 'Choosing the SSH executable'      -> “Use bundled OpenSSH”
+		   -> 'Choosing HTTPS transport backend' -> “Use the OpenSSL library”
+		   -> 'Configuring the line ending conversions' -> “Checkout Windows-style, commit Unix-style line endings” 선택
+		   -> 'Configuring the terminal emulator to use with Git Bash' -> “Use MinTTY (the default terminal of MSYS2)”
+		   -> 'Choose the default behavior of git pull' -> “Fast-forward or merge”
+		   -> 'Choose a credential helper' -> “Git Credential Manager”
+		   -> 'Configuring extra options'  -> “Enable file system caching”
+		   -> 설치 진행
+		   -> 설치 완료 후
+		   -> “Launch Git Bash” 옵션 -> 체크 상태로 [Finish]
+   3. Git 환경변수 path에 추가
+      > C:\Program Files\Git\bin
+   4. VSCode와 Git 연동 설정
+      1. 먼저 https://github.com  접속
+	  2. 왼쪽 하단 (Account) -> Sign in to use AI features..
+      3. 연동 및 권한 허용
+   5. 로컬 프로젝트에 Git 초기화하기
+      > git init
+	    -> 탐색기에서 보면 .git 폴더가 생성되면 정상이다. (vs code에서는 안보임)
+	  > git config --global user.name "농부"       //GitHub 계정의 사용자 이름(user name) 이 아니라,Git 커밋할 때 표시될 이름
+      > git config --global user.email "farmerkyh69@google.com"
+
+   6. Github에 Repository생성
+      > GitHub 로그인 → 오른쪽 상단 “+” → “New repository”
+	  > Repository name : react-9diin-49gang
+	  > Description : react-9diin-49gang
+	  > [Create repository]
+      
+   7. 로컬 프로젝트를 Github원격저장소에 연결 하기
+	  > git remote add origin https://github.com/farmerkyh69/react-9diin-49gang.git
+	  > git remote -v      //정상여부 확인
+
+   8. 로컬 프로젝트를 Github원격저장소에 커밋 및 푸시하기
+      1. 변경 파일 스테이징 & 커밋
+	     > git add .          //스테이징 영역에 올리기
+	     > git commit -m "react-9diin-49gang first commit"   //커밋하기
+	   2. GitHub로 업로드(push)
+	  	 > git branch -M main       //브랜치 이름 main으로 변경
+	  	 > git push -u origin main  //원격저장소에 푸시하기
+		 → 브라우저가 뜨거나 GitHub 로그인 창이 나오면 GitHub 계정 인증을 해주면 됨
+
+
+
+
+넷플릭스 : ShdqnWlrl!010
+ShdqnWlrl!010
+export default AppFooter;
+export {AppFooter};
+
+inputElement.current?.focus(); 
+inputElement.current.focus();
+   
+   
+   
+className="w-full h-[210px]
+className="w-full h-210
+

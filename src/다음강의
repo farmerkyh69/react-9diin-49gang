@@ -44,10 +44,10 @@ id : farmerkyh@naver.com / richColors
 5. Supabase
    0. https://supabase.com
    1. github와 연동 후 login
-   2. farmerkyh69@gmail.com
+   2. farmerkyh6978@gmail.com
    3. project 생성
 	  username : farmerkyh  
-	  Organization : farmerkyh69's Org
+	  Organization : farmerkyh6978's Org
 	  Project name      : signal,  react-9diin
 	  Database password : signal!010
    4. react에 supabase연동 설정
@@ -58,7 +58,7 @@ id : farmerkyh@naver.com / richColors
 	    .env, utils/subpase.ts, App.tsx 파일 내용을  react 프로젝트 설정
    5. table 생성
       우.상 : [Dashboard]
-	  farmerkyh69's Org
+	  farmerkyh6978's Org
 	  프로젝트선택 : react-9diin
 	  왼쪽메뉴 :Table Editor
 	  왼쪽 [+New Table]
@@ -86,7 +86,7 @@ id : farmerkyh@naver.com / richColors
    6. file upload영 table 생성
       https://supabase.com
 	  [Dashboard]
-	  [farmerkyh69's Org]
+	  [farmerkyh6978's Org]
 	  [react-9diin]
 	  왼쪽 메뉴 -> [Storage]
 	  [+New bucket]
@@ -132,7 +132,7 @@ id : farmerkyh@naver.com / richColors
 			** 승인된 리디렉션 URI 찾아오기
 			   1. supabase에 접속 :  https://supabase.com
 			   2. 연관되어 있는 : [Dashboard] 
-			                    -> [farmerkyh69's Org] 
+			                    -> [farmerkyh6978's Org] 
 								-> [react-9diin] 
 								-> 왼쪽 icon 메뉴 : Authentication
 								-> 왼쪽 메뉴 : Sign In / Providers
@@ -187,7 +187,7 @@ id : farmerkyh@naver.com / richColors
       > git init
 	    -> 탐색기에서 보면 .git 폴더가 생성되면 정상이다. (vs code에서는 안보임)
 	  > git config --global user.name "농부"       //GitHub 계정의 사용자 이름(user name) 이 아니라,Git 커밋할 때 표시될 이름
-      > git config --global user.email "farmerkyh69@google.com"
+      > git config --global user.email "farmerkyh6978@google.com"
 
    6. Github에 Repository생성
       > GitHub 로그인 → 오른쪽 상단 “+” → “New repository”
@@ -196,7 +196,7 @@ id : farmerkyh@naver.com / richColors
 	  > [Create repository]
       
    7. 로컬 프로젝트를 Github원격저장소에 연결 하기
-	  > git remote add origin https://github.com/farmerkyh69/react-9diin-49gang.git
+	  > git remote add origin https://github.com/farmerkyh6978/react-9diin-49gang.git
 	  > git remote -v      //정상여부 확인
 
    8. 로컬 프로젝트를 Github원격저장소에 커밋 및 푸시하기
@@ -229,7 +229,7 @@ id : farmerkyh@naver.com / richColors
 		-> Github에 commit & push
 		-> vercel에서 다시 [Deploy] 클릭
 
-	  > Author : farmerkyh69
+	  > Author : farmerkyh6978
 	  > Repository : react-9diin-49gang
 	  > [Import]
 	  > [Deploy]	   //vercel로 업로드

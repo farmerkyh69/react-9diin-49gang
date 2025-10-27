@@ -1,6 +1,5 @@
 import { ChartNoAxesCombined, CodeXml, DraftingCompass, Footprints, Goal, Lightbulb, List, Rocket } from "lucide-react";
 
-import { CLASS_CATEGORY } from "@/constants/category.constants";
 import { ChevronDown } from "lucide-react";
 import { Button } from "../ui";
 

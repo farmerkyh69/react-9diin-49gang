@@ -1,7 +1,17 @@
 https://www.youtube.com/watch?v=tsGWJMRP6Bg&list=PL-cIzvS-5d-3ym4Jv54Wwluv_gIJRHaQw&index=43
-[FE] 리액트 - 47강
+[FE] 리액트 - 49강
 
 id : farmerkyh@naver.com / richColors
+
+1. 관련 site
+   	1. https://ui.shadcn.com/docs/installation/vite
+   	2. vercel.com
+	3. https://zustand.docs.pmnd.rs/getting-started/introduction
+	4. https://www.blocknotejs.org/   
+	5. Supabase
+    6. https://github.com/
+
+
 
 
 1. 프로젝트 생성
@@ -143,7 +153,7 @@ id : farmerkyh@naver.com / richColors
 				   > 'Client Secret (for OAuth)'에 붙여넣고
 				   > [Save]
 
-3. 배포
+3. Git로 배포
    1. Git에 commit전 설정
       > .gitignore 에  환경변수 관련 파일들은 업로드 제외처리
 	  > .evn*
@@ -197,8 +207,37 @@ id : farmerkyh@naver.com / richColors
 	  	 > git branch -M main       //브랜치 이름 main으로 변경
 	  	 > git push -u origin main  //원격저장소에 푸시하기
 		 → 브라우저가 뜨거나 GitHub 로그인 창이 나오면 GitHub 계정 인증을 해주면 됨
+    -------------------------
+	9. VSCode에서 시각적으로 커밋하기
+	   1. VSCode 왼쪽 사이드바에서 소스 제어(Git) 아이콘 클릭
+	   2. 변경된 파일 옆에 있는 + 아이콘 클릭 (스테이징)
+	   3. 상단 커밋 메시지 입력란에 메시지 작성 후 체크 아이콘 클릭 (커밋)
+	   4. 우측 상단의 “…” → Push” 선택 → GitHub로 업로드
 
+4. vercel.com
+   1. https://github.com/ 에 먼저 로그인
+   2. https://vercel.com/ 접속
+	  > Team 생성
+   3. 오른쪽에 [Add New] -> [Project]
+   4. Import Git Repository
+	  > GitHub 로그인
+	  > [Install]를 통해서 Git에 있는 프로젝트를 vercel Repository와 연동
+	  > [Import] 클릭
+	  > [Deploy] 클릭 해서 배포를 수행한다.
+      > 아래쪽에 에러 발생 시 해결해야 됨
 
+	  > Author : farmerkyh69
+	  > Repository : react-9diin-49gang
+	  > [Import]
+	  > [Deploy]	   //vercel로 업로드
+	  > [Open in Browser]  //브라우저에 찰기
+5. shadcn ui 활용한 프로젝트 개발 계속 진행하기
+   1. shadcn ui 컴포넌트 추가 설치	
+   2. shadcn ui 관련 모듈 설치		
+   3. reactrouter-dom 모듈 설치		
+   4. reactrouter-dom 관련 모듈 설치		
+   5. 노플릭스 활용한 참고사이트 제작	
+   6. reactrouter-dom 활용한 참고사이트 제작
 
 
 넷플릭스 : ShdqnWlrl!010

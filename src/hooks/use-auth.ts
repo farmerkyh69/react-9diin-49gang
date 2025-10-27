@@ -19,7 +19,7 @@ export default function useAuthListener() {
         checkSession();        
 
         // 실시간 상태 변화 감지
-        const {data: listener} = supabase.auth.onAuthStateChange((event, session) => {
+        const {data: listener} = supabase.auth.onAuthStateChange((_event, session) => {
             if (session?.user) {
                 setUser({id: session.user.id, email: session.user.email as string , role: session.user.role as string});
             } else {

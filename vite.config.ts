@@ -12,6 +12,6 @@ export default defineConfig({
     },
   },
   build: {
-    minify: 'esbuild', //
+    minify: false, //압축 완전 비활성화
   }, 
 })

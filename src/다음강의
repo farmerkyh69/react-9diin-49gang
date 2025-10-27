@@ -225,6 +225,9 @@ id : farmerkyh@naver.com / richColors
 	  > [Import] 클릭
 	  > [Deploy] 클릭 해서 배포를 수행한다.
       > 아래쪽에 에러 발생 시 해결해야 됨
+	    -> 오류 해결
+		-> Github에 commit & push
+		-> vercel에서 다시 [Deploy] 클릭
 
 	  > Author : farmerkyh69
 	  > Repository : react-9diin-49gang
